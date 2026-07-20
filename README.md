@@ -59,4 +59,5 @@ Following an evaluation of the V1 system's performance, I have decided that atte
 Rather than succumbing to diminishing returns by over-optimising a foundational proof-of-concept, I decided to do rapid iteration instead. The minor planar discrepancies in V1 will be accepted as known mechanical constraints, and development resources will immediately pivot to Version 2. This allows the project to maintain momentum and focus on larger, more impactful architectural advancements.
 
 Future Development (V2)
+
 Version 1 establishes pure Cartesian control within a two-dimensional plane. Version 2 will expand this into three-dimensional space by integrating a rotating base turret, upgrading the kinematics from 2D planar to a full 3D spherical coordinate system.
