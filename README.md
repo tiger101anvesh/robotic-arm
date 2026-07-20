@@ -46,5 +46,17 @@ Command Examples:
 
 -100 100 (Backward reach via kinematic flip)
 
+Known Limitations and System Evaluation
+While the V1 architecture successfully validates the core kinematic maths and Cartesian control, several physical and mathematical limitations have been identified during operation:
+ - Mechanical Backlash and Jitter: The utilisation of standard hobby servos introduces inherent mechanical tolerances, resulting in minor gear backlash and electronic jittering at resting coordinates.
+ - Linear Interpolation Inaccuracies: Consequently, the physical execution of the moveLine() function exhibits slight spatial deviations from a mathematically perfect straight line due to these gear tolerances.
+ - Pathing Constraints: The current software suite is restricted to linear interpolation and unconstrained point-to-point sweeps. It lacks the advanced mathematical functions required to calculate and trace defined curves, specific arcs, or circular trajectories.
+ - Kinematic Dead Zones: Due to the initial hardware configuration—where the servo's 90-degree resting position maps to a 180-degree straight arm—the elbow is mechanically prevented from folding into tight, acute angles. This creates a spatial blind spot, prohibiting the end effector from reaching or manipulating objects situated in close proximity to the base pivot.
+
+Strategic Evaluation and Rapid Iteration:
+Following an evaluation of the V1 system's performance, I have decided that attempting to engineer out these physical and algorithmic imperfections would require a disproportionate expenditure of time, financial resources, and complex software compensation logic.
+
+Rather than succumbing to diminishing returns by over-optimising a foundational proof-of-concept, I decided to do rapid iteration instead. The minor planar discrepancies in V1 will be accepted as known mechanical constraints, and development resources will immediately pivot to Version 2. This allows the project to maintain momentum and focus on larger, more impactful architectural advancements.
+
 Future Development (V2)
 Version 1 establishes pure Cartesian control within a two-dimensional plane. Version 2 will expand this into three-dimensional space by integrating a rotating base turret, upgrading the kinematics from 2D planar to a full 3D spherical coordinate system.
